@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     private Rigidbody2D rb2d;
     private float powerUp = 0;
+    public Sprite newSprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,12 @@ public class Movement : MonoBehaviour
         {
             Jump();
         }
+
+        if(powerUp == 2)
+        {
+            GetComponent < SpriteRenderer >().sprite = newSprite;
+        }
+            
 
         Vector3 newScale = transform.localScale;
         if (Input.GetAxis("Horizontal") > 0.0f)
