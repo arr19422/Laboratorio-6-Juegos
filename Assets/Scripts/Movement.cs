@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -19,11 +18,6 @@ public class Movement : MonoBehaviour
         if (Input.GetButtonDown("Jump") || Input.GetKey(KeyCode.W))
         {
             Jump();
-        }
-
-        if (Input.GetKey(KeyCode.Return))
-        {
-            RepeatScene();
         }
 
         Vector3 newScale = transform.localScale;
@@ -70,10 +64,5 @@ public class Movement : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-    }
-
-    public void RepeatScene()
-    {
-        SceneManager.LoadScene(0);
     }
 }
